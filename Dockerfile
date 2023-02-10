@@ -15,6 +15,7 @@ RUN apt-get update \
         wget \
         zsh \
         tzdata \
+        ca-certificates \
     && ln -fs /usr/share/zoneinfo/Australia/Melbourne /etc/localtime \
     && echo "Set disable_coredump false" >> /etc/sudo.conf \
     && useradd docker --no-create-home \
