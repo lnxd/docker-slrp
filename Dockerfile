@@ -5,6 +5,9 @@ FROM debian:bookworm-slim
 ENV DEBIAN_FRONTEND=noninteractive \
     TZ=UTC
 
+# Copy start script
+COPY start.sh /home/docker/start.sh
+
 # Install default packages, set up environment, and add infinite_sleep script
 RUN apt-get update && apt-get upgrade -y && \
     apt-get install -y --no-install-recommends \
@@ -16,7 +19,8 @@ RUN apt-get update && apt-get upgrade -y && \
     mkdir -p /opt/scripts && \
     printf '%s\n' '#!/bin/sh' 'echo "- Sleeping forever"' 'sleep infinity' > /opt/scripts/infinite_sleep && \
     chmod +x /opt/scripts/infinite_sleep && \
+    chmod +x /home/docker/start.sh && \
     apt-get clean && rm -rf /var/lib/apt/lists/*
 
-# Define working directory
 WORKDIR /home/docker
+ENTRYPOINT ["/home/docker/start.sh"]
