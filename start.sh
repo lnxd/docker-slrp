@@ -18,7 +18,7 @@ case $ARCH in
 esac
 echo "- Found supported architecture: $ARCH"
 
-ASSETS=$(curl -s "https://api.github.com/repos/nfx/slrp/releases/latest" | grep '"browser_download_url":')
+ASSETS=$(curl -s "https://api.github.com/repos/lnxd/slrp/releases/latest" | grep '"browser_download_url":')
 
 DOWNLOAD_URL=$(echo "$ASSETS" | grep "linux_${ARCH_SUFFIX}" | sed -E 's/.*"([^"]+)".*/\1/')
 
