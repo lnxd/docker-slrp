@@ -28,12 +28,18 @@ Example `docker-compose.yml` for SLRP:
 version: '3'
 services:
   slrp:
-    image: lnxd/slrp
+    image: ghcr.io/lnxd/docker-slrp:latest
     container_name: slrp
     ports:
       - "8089:8089"
       - "8090:8090"
     restart: unless-stopped
+    environment:
+      - SLRP_APP_STATE=/var/slrp/data
+      - SLRP_SERVER_ADDR=0.0.0.0:8089
+      - TZ=Australia/Melbourne
+    volumes:
+      - ~/slrp/data:/var/slrp/data
 ```
 
 ### Environment Variables
