@@ -44,7 +44,7 @@ services:
 
 ### Environment Variables
 
-Please note that these were extracted from the main project's readme by AI, and is most likely innaccurate. I'm just including this list for convenience, until I get a chance to properly review it.  
+Please note that these variables were extracted from the main project's readme by AI, and it's very likely that some will be innaccurate. I'm including this list for convenience, until I get a chance to properly review it.  
 
 | Variable                                 | Example                        | Purpose                                                                                              |
 |------------------------------------------|--------------------------------|------------------------------------------------------------------------------------------------------|
