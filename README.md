@@ -10,7 +10,7 @@ This container is based on `debian-bookworm:slim`. I chose this for convenience 
 
 - **8089**: Web UI
 - **8090**: SOCKS interface
-- **6060**: Profiler (likely requires `SLRP_PPROF_ENABLE` or `SLRP_SERVER_ENABLE_PROFILER`, this is untested)
+- **6060**: Profiler (not required for general use)
 
 ## Deployment
 
